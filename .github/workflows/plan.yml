@@ -4,7 +4,7 @@ jobs:
     plan:
         runs-on: ubuntu-latest
         env:
-          AWS_ACCESS_KEY_ID: ${{secrets.AWS_SCCESS_KEY_ID}}
+          AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
           AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
 
         steps: 
@@ -18,6 +18,7 @@ jobs:
 
           - name: Terraform Init
             run: terraform init -input=false
+            
           - name: Terraform Plan
             run: terraform plan -input=false
             
